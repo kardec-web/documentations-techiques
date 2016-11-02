@@ -1,5 +1,11 @@
 # SSH
 
+## Créer une clé
+
+```
+ssh-keygen -t rsa -C email-owner
+```
+
 ## Spécifier la clé à utiliser pour un domaine
 
 ```
