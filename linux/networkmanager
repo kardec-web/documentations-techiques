@@ -1,0 +1,11 @@
+Demarrer le network manager
+===========================
+::
+
+ systemctl start NetworkManager
+
+ Demarrer le networkmanager avec le systeme
+ ==========================================
+ ::
+
+  systemctl enable NetworkManager

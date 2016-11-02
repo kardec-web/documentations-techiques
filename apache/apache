@@ -1,0 +1,4 @@
+Installation de Apache
+======================
+
+pacman -S apache php php-apache mariadb

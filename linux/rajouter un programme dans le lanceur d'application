@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Sublime Text 2
+GenericName=sublime_text
+Comment=Editeur de texte
+Icon=chemin vers l'icône du programme(s'il y en a une...)
+Exec='subl' 
+Terminal=false  #ouvrir ou non un terminal lors de l'exécution du programme (false ou true)
+StartupNotify=false  #notification de démarrage ou non (false ou true)
+Categories=Tools
