@@ -1,0 +1,37 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+
+# Colors
+RED="\[\033[0;31m\]"
+YELLOW="\[\033[0;33m\]"
+GREEN="\[\033[0;32m\]"
+BLUE="\[\033[0;34m\]"
+LIGHT_RED="\[\033[1;31m\]"
+LIGHT_GREEN="\[\033[1;32m\]"
+WHITE="\[\033[1;37m\]"
+LIGHT_GRAY="\[\033[0;37m\]"
+COLOR_NONE="\[\e[0m\]"
+
+#    GIT_PS1_SHOWDIRTYSTATE : signaler les modifs à la copie locale (symbole *) et à l’index (le stage, symbole +).
+#    GIT_PS1_SHOWSTASHSTATE : signaler la présence d’entrées dans le stash (symbole $)
+#    GIT_PS1_SHOWUNTRACKEDFILES : signaler la présence de fichiers ni versionnés ni ignorés (donc untracked) dans la copie locale (symbole %).
+#    GIT_PS1_SHOWUPSTREAM : indiquer le rapport entre la branche locale et sa version trackée (en retard <, en avance >, synchro = ou ayant divergé <>). Les affichages peuvent être modifiés selon la valeur de la variable ; les symboles décrits ici sont pour la valeur auto, mais on en a d’autres, notamment verbose. Voyez votre script de prompt pour les détails.
+#    GIT_PS1_DESCRIBE_STYLE peut prendre diverses valeurs pour représenter un detached HEAD ; par défaut (default), on a l’abbreviated SHA mais on a d’autres options, la plus utile étant probablement branch.
+#	 GIT_PS1_SHOWCOLORHINTS: colorise les infos
+
+# Archlinux: install sudo pacman -S bash-completion
+source /usr/share/git/git-prompt.sh
+source /usr/share/git/completion/git-prompt.sh
+
+export GIT_PS1_SHOWDIRTYSTATE=1 GIT_PS1_SHOWSTASHSTATE=1 GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_SHOWUPSTREAM=verbose GIT_PS1_DESCRIBE_STYLE=branch GIT_PS1_SHOWCOLORHINTS=1
+# PS1='[\u@\h \W]\$ '
+# PS1='${BLUE}\u@\h:\w$(__git_ps1) \$ '
+PROMPT_COMMAND='__git_ps1 "${RED}\u@${COLOR_NONE}\h${LIGHT_GRAY}[\W]${COLOR_NONE}" " \\\$ "'
+# PROMPT_COMMAND=prompt_func

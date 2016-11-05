@@ -1,0 +1,75 @@
+# Put this in your ~/.gitconfig or ~/.config/git/config
+# Windows users: "~" is your profile's home directory, e.g. C:\Users\<YourName>
+# First: git config --global core.excludesfile ~/.gitignore_global
+
+[user]
+	email = jeremy685@msn.com
+	name = Kardec
+
+
+[core]
+    editor = vim
+    pager = less
+	excludesfile = /home/jeremy/.gitignore_global
+	whitespace = -trailing-space
+
+[alias]
+    st = status
+	ci = commit
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
+    wdiff = diff --word-diff
+    oops = commit --amend --no-edit
+	review-local = "!git lg @{push}.."
+
+# activate color for all commands
+[color]
+    ui = auto
+
+# push only the current branch to its upstream branch
+[push]
+    default = upstream
+
+[diff]
+	# Use better, descriptive initials (c, i, w) instead of a/b.
+	mnemonicPrefix = true
+	# Show renames/moves as such
+	renames = true
+	# When using --word-diff, assume --word-diff-regex=.
+	wordRegex = .
+	# Display submodule-related information (commit listings)
+	submodule = log
+
+
+[status]
+	# Display submodule rev change summaries in status
+	submoduleSummary = true
+	# status will see inside untracked directories
+	showUntrackedFiles = all
+
+[fetch]
+	# Auto-fetch submodule changes (sadly, won't auto-update)
+	recurseSubmodules = on-demand
+
+[log]
+	# Use abbrev SHAs whenever possible/relevant instead of full 40 chars
+	abbrevCommit = true
+	# Automatically --follow when given a single path
+	follow = true
+
+[merge]
+	# Display common-ancestor blocks in conflict hunks
+	conflictStyle = diff3
+
+[mergetool]
+	# Clean up backup files created by merge tools on tool exit
+	keepBackup = false
+	# Clean up temp files created by merge tools on tool exit
+	keepTemporaries = false
+	# Put the temp files in a dedicated dir anyway
+	writeToTemp = true
+	# Auto-accept file prompts when launching merge tools
+	prompt = false
+
+[tag]
+	# Sort tags as version numbers whenever applicable, so 1.10.2 is AFTER 1.2.0.
+	sort = version:refname

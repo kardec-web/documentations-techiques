@@ -20,10 +20,16 @@ gulp.task('webserver', function() {
 });
 
 // css task
+var sass_options = {
+    outputStyle: 'nested',
+    precison: 3,
+    errLogToConsole: true,
+    // includePaths: ['./node_modules']
+}
 gulp.task('styles', function () {
     return gulp.src('app/static/css/styles.scss')
     // return gulp.src('app/static/css/styles-smartphones.scss')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass(sass_options).on('error', sass.logError))
     .pipe(autoprefixer('last 2 version'))
     .pipe(rename('styles.css'))
     .pipe(minifycss())

@@ -18,6 +18,11 @@ Projet
     $ git config user.name "Scott Chacon"
     $ git config user.email "schacon@gmail.com"
 
+## Lister les paramètres de configuration
+```
+git config -l
+```
+
 Dépôt
 =====
 Cloner un dépôt
@@ -35,6 +40,12 @@ Créer un nouveau dépôt
     
 git init crée un nouveau dépôt en incorporant les fichiers déjà existant
 dans la racine du projet.
+
+## Spécifier le dépôt distant à utiliser
+```
+git remote add origin/master <adresse du dépôt>
+git push --set-upstream origin/master master
+```
 
 Ajouter des fichiers ou inclure les modifications faites sur un fichier
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
