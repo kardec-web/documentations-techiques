@@ -2,3 +2,21 @@ Installation de Apache
 ======================
 
 pacman -S apache php php-apache mariadb
+
+## Test config
+```
+apachectl configtest
+apachectl -t
+```
+
+## List all running virtual host
+```
+apache2ctl -S
+```
+
+## Debian / Ubuntu specific configuration file
+The “master” configuration file for Apache is located in the apache2.conf file and the httpd.conf file contains user-specific configuration 
+
+## Configuration directory
+Configuration files are stored in the conf.d/ directory
+ex: /etc/apache2/conf.d/vhosts.conf
