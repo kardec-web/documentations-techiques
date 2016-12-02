@@ -10,9 +10,16 @@ c:\tools\optipng-0.7.6-win32\optipng -o7 *.png
 # Optimisation des JPG pour le web
 https://hacks.mozilla.org/2014/08/using-mozjpeg-to-create-efficient-jpegs/
 https://mozjpeg.codelove.de/binaries.html
+http://albertogasparin.it/articles/2014/12/batch-compress-images-mozjpeg/
 
 ```
 cjpeg -quality 80 foo.bmp > bar.jpg
+```
+
+multi images
+```
+Ne marche pas sous windows :(
+find ./ -name "*.jpg" -exec "C:\Tools\mozjpeg_3.1_x86/cjpeg" -quality 80 -outfile "../optimized/{}";
 ```
 
 # Online tools
