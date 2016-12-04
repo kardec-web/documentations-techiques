@@ -5,7 +5,10 @@
 * isort: Trie les import Python
 * Python PEP8 Autoformat
 * SublimeLinter
-* emmet
+* Emmet
+* Emmet Css Snippets
+* MarkdownEditing
+* Table Editor
 
 ## Autres modules pouvant être utiles
 
@@ -15,6 +18,7 @@
 * SublimeLinter-jshint
 * SublimeLinter-json
 * SublimeLinter-html-tidy
+* SublimeLinter-php
 * SublimeREPL
 * Sublime Text Git 
 * Odoo Snippets
